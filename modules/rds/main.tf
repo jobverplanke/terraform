@@ -45,8 +45,8 @@ resource "aws_db_instance" "default" {
 
   copy_tags_to_snapshot = true
 
-  tags = {
+  tags = merge({
     application = local.client_name
     nametag = local.client_name
-  }
+  }, var.tags)
 }

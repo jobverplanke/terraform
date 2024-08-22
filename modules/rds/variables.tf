@@ -44,3 +44,9 @@ variable "availability_zone" {
   default = "eu-west-1a"
   description = "Choose between eu-west-1a, eu-west-1b or eu-west-1c (default eu-west-1a)"
 }
+
+variable "tags" {
+  type = map(string)
+  default = {}
+  description = "A mapping of tags to assign to the RDS instance"
+}
