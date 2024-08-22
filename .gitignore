@@ -7,3 +7,5 @@
 /*.lock.hcl
 /*.tfstate*
 /*.tfvars
+
+main.tf
