@@ -8,4 +8,5 @@
 /*.tfstate*
 /*.tfvars
 
-main.tf
+/main.tf
+/outputs.tf
