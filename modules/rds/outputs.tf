@@ -18,3 +18,15 @@ output "password" {
   description = "RDS MySQL password"
   sensitive = true
 }
+
+output "access_key" {
+  value = aws_iam_access_key.default.id
+  description = "IAM Access Key"
+  sensitive = true
+}
+
+output "access_key_secret" {
+  value = aws_iam_access_key.default.secret
+  description = "IAM Access Key Secret"
+  sensitive = true
+}

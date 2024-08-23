@@ -1,7 +1,7 @@
 resource "aws_db_parameter_group" "default" {
   name   = "np-${local.client_name}-parameter-group"
   family = "mysql8.0"
-  description = "MySQL np-${local.client_name} Parameter Group"
+  description = "Parameter Group for ${local.rds_instance_identifier} RDS instance"
 
   parameter {
     name  = "time_zone"
@@ -14,12 +14,9 @@ resource "aws_db_parameter_group" "default" {
   }
 
   parameter {
-    name  = "collation-server"
+    name  = "collation_server"
     value = var.collation_server
   }
 
-  tags = {
-    application = local.client_name
-    nametag = local.client_name
-  }
+  tags = local.tags
 }

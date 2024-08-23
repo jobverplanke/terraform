@@ -45,8 +45,14 @@ variable "availability_zone" {
   description = "Choose between eu-west-1a, eu-west-1b or eu-west-1c (default eu-west-1a)"
 }
 
+variable "deletion_protection" {
+  type = bool
+  default = false
+  description = "Allow deletion of RDS instance, can be modified after creation (default false)"
+}
+
 variable "tags" {
   type = map(string)
   default = {}
-  description = "A mapping of tags to assign to the RDS instance"
+  description = "A mapping of tags to assign to various services"
 }
