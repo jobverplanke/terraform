@@ -12,7 +12,7 @@ locals {
 resource "random_password" "default" {
   length = 32
   special = true
-  override_special = "!#$%&*()-_=+[]{}<>:?"
+  override_special = "!#$%*()-_=+[]{}:?"
 }
 
 resource "mysql_database" "default" {
