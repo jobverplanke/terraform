@@ -15,7 +15,8 @@ variable "host" {
 
 variable "port" {
   type = number
-  description = "Database port"
+  default = 3306
+  description = "Database port (default 3306)"
 }
 
 variable "database" {
