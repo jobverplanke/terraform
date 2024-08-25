@@ -3,10 +3,10 @@
 .DS_Store
 
 # Terraform
-/*.terraform/
-/*.lock.hcl
-/*.tfstate*
-/*.tfvars
+/**/*.terraform/
+/**/*.lock.hcl
+/**/*.tfstate*
+/**/*.tfvars
 
 /main.tf
 /outputs.tf
