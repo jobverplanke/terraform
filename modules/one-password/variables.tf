@@ -1,7 +1,7 @@
 variable "client_name" {
   type        = string
-  default     = ""
-  description = "Name of the client (default empty string)"
+  default     = null
+  description = "Name of the client (default null)"
 }
 
 variable "service_account_token" {
