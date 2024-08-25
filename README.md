@@ -3,6 +3,7 @@
 ## Prerequisites
 - [AWS CLI](https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html) installed and configured
 - [Terraform CLI](https://developer.hashicorp.com/terraform/install) installed and configured
+- [1Password CLI](https://developer.1password.com/docs/cli/get-started)
 
 ## Resources
 - [Documentation of AWS Provider](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/bedrock_provisioned_model_throughput)
