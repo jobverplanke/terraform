@@ -8,12 +8,12 @@ output "port" {
   description = "RDS MySQL port number"
 }
 
-output "username" {
+output "root_user" {
   value = aws_db_instance.default.username
   description = "RDS MySQL username"
 }
 
-output "password" {
+output "root_user_password" {
   value = aws_db_instance.default.password
   description = "RDS MySQL password"
   sensitive = true
