@@ -5,7 +5,6 @@ provider "aws" {
 locals {
   client_name = lower(replace(var.client_name, "/\\W|_|\\s/", "-"))
 
-
   aws_account_id = data.aws_caller_identity.current.account_id
   aws_creator = data.aws_caller_identity.current.arn
 
