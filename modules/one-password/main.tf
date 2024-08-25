@@ -7,7 +7,7 @@ data "onepassword_vault" "default" {
 }
 
 locals {
-  title = "${var.title} - ${var.client_name}"
+  title = var.client_name != null ? "${var.title} - ${var.client_name}" : var.title
 
   is_login    = var.category == "login"
   is_password = var.category == "password"
