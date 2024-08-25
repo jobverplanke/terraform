@@ -3,7 +3,7 @@ provider "onepassword" {
 }
 
 data "onepassword_vault" "default" {
-  name = "DevOps Tech"
+  name = var.vault
 }
 
 locals {
