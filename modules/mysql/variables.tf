@@ -1,37 +1,37 @@
 variable "connect_as_user" {
-  type = string
+  type        = string
   description = "The user which performs the actions. Ensure the user has enough privileges"
 }
 
 variable "user" {
-  type = string
+  type        = string
   description = "The user that will be created. (output lower cased and spaces replaces with '_')"
 }
 
 variable "host" {
-  type = string
+  type        = string
   description = "Database hostname without schema"
 }
 
 variable "port" {
-  type = number
-  default = 3306
+  type        = number
+  default     = 3306
   description = "Database port (default 3306)"
 }
 
 variable "database" {
-  type = string
+  type        = string
   description = "Database name"
 }
 
 variable "default_character_set" {
-  type = string
-  default = "utf8mb4"
+  type        = string
+  default     = "utf8mb4"
   description = "(default utf8mb4)"
 }
 
 variable "default_collation" {
-  type = string
-  default = "utf8mb4_0900_ai_ci"
+  type        = string
+  default     = "utf8mb4_0900_ai_ci"
   description = "(default utf8mb4_0900_ai_ci)"
 }
