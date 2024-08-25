@@ -1,5 +1,5 @@
 locals {
-  aws_account_id = data.aws_caller_identity.current.account_id
+  aws_account_id   = data.aws_caller_identity.current.account_id
   aws_account_name = data.aws_caller_identity.current.arn
 }
 
