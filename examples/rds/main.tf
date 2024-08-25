@@ -12,9 +12,9 @@ module "mysql" {
   source = "./../../modules/mysql"
 
   connect_as_user = module.rds.root_user
-  host = module.rds.host
-  port = module.rds.port
+  host            = module.rds.host
+  port            = module.rds.port
 
-  user = "test_user"
+  user     = "test_user"
   database = "test_database"
 }
