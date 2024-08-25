@@ -1,8 +1,8 @@
 # Terraform
 
 ## Prerequisites
-- [AWS CLI](https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html) installed and configured
-- [Terraform CLI](https://developer.hashicorp.com/terraform/install) installed and configured
+- [AWS CLI](https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html)
+- [Terraform CLI](https://developer.hashicorp.com/terraform/install)
 - [1Password CLI](https://developer.1password.com/docs/cli/get-started)
 
 ## Resources
@@ -11,3 +11,8 @@
 - [Modules in Package Sub-directories](https://developer.hashicorp.com/terraform/language/modules/sources#modules-in-package-sub-directories)
 - [MySQL module](https://github.com/petoju/terraform-provider-mysql)
 
+## TODO's
+- [ ] Add remote backend
+- [ ] Add 1Password module with examples
+- [ ] README for modules
+- [ ] README for examples
