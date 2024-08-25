@@ -13,6 +13,11 @@
 
 ## TODO's
 - [ ] Add remote backend
-- [ ] Add 1Password module with examples
+- [x] Add rds module
+- [x] Add mysql module
+- [x] Add 1Password module
+- [x] Add mysql example
+- [x] Add mysql example with 1password
+- [] Add rds example with mysql and 1password
 - [ ] README for modules
 - [ ] README for examples
