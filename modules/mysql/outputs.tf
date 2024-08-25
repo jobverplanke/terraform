@@ -4,7 +4,7 @@ output "user" {
 }
 
 output "password" {
-  value = mysql_user.default.plaintext_password
+  value = random_password.default.result
   description = "MySQL password"
   sensitive = true
 }
