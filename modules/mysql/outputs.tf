@@ -13,3 +13,13 @@ output "database" {
   value = mysql_database.default.name
   description = "MySQL database"
 }
+
+output "host" {
+  value = var.host
+  description = "MySQL host"
+}
+
+output "port" {
+  value = var.port
+  description = "MySQL port"
+}
