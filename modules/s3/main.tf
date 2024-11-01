@@ -14,7 +14,7 @@ locals {
 
   iam_user        = var.project_name != "" ? "np-s3-${local.client_name}-${local.project_name}-${var.project_type}" : "np-s3-${local.client_name}-${var.project_type}"
   iam_policy_name = var.project_name != "" ? "AWSS3${title(local.client_name_without_spaces)}${title(local.project_name_without_spaces)}${title(var.project_type)}" : "AWSS3${title(local.client_name_without_spaces)}${title(var.project_type)}"
-  iam_user_groups = ["Projects"]
+  iam_user_groups = compact(concat(["Projects"], var.iam_user_groups))
 
   tags = merge({
     application = local.client_name

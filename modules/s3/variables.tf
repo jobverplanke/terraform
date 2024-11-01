@@ -30,6 +30,12 @@ variable "project_type" {
   }
 }
 
+variable "iam_user_groups" {
+  type        = list(string)
+  default     = []
+  description = "A list of IAM User Groups (default Projects)"
+}
+
 variable "tags" {
   type        = map(string)
   default     = {}
