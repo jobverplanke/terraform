@@ -1,5 +1,5 @@
 resource "aws_db_parameter_group" "default" {
-  name        = "np-${local.client_name}-parameter-group"
+  name        = local.db_parameter_group_name
   family      = "mysql8.0"
   description = "Parameter Group for ${local.rds_instance_identifier} RDS instance"
 

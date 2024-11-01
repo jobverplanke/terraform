@@ -11,8 +11,11 @@ locals {
   rds_instance_identifier = "np-${local.client_name}"
   rds_username            = lower(replace(var.client_name, "/\\W|_|\\s/", "_"))
 
-  iam_user        = local.client_name
+  iam_user        = "np-rds-snapshot-${local.client_name}"
+  iam_user_groups       = ["Projects"]
   iam_policy_name = "AWSRDSSnapshot${title(replace(var.client_name, "/\\W|_|\\s/", ""))}"
+
+  db_parameter_group_name = "np-${local.client_name}-parameter-group"
 
   tags = merge({
     application = local.client_name

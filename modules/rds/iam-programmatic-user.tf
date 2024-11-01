@@ -5,7 +5,7 @@ resource "random_password" "iam_password" {
 }
 
 resource "aws_iam_user" "default" {
-  name = "np-rds-snapshot-${local.iam_user}"
+  name = local.iam_user
 
   tags = local.tags
 }
@@ -16,7 +16,7 @@ resource "aws_iam_access_key" "default" {
 
 resource "aws_iam_user_group_membership" "default" {
   user   = aws_iam_user.default.name
-  groups = ["Projects"]
+  groups = local.iam_user_groups
 }
 
 resource "aws_iam_policy" "default" {
