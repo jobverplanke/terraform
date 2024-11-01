@@ -1,5 +1,4 @@
 locals {
-  service_account_token = ""
   vault                 = "DevOps Tech"
 }
 
@@ -17,7 +16,7 @@ module "mysql" {
 module "one-password" {
   source = "./../../modules/one-password"
 
-  service_account_token = local.service_account_token
+  service_account_token = var.service_account_token
 
   title    = "Test MySQL User"
   category = "database"

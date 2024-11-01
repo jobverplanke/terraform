@@ -1,5 +1,4 @@
 locals {
-  service_account_token = ""
   client_name           = "Test Client Name"
   vault                 = "DevOps Tech"
   project_type          = "web"
@@ -16,7 +15,7 @@ module "s3" {
 module "one-password-iam-user" {
   source = "./../../modules/one-password"
 
-  service_account_token = local.service_account_token
+  service_account_token = var.service_account_token
 
   client_name = local.client_name
   title       = "${local.client_name} - S3 Bucket"

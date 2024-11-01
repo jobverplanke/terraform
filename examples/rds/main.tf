@@ -1,5 +1,4 @@
 locals {
-  service_account_token = ""
   client_name           = "Test Client Name"
   client_identifier = lower(join("", regexall("[A-Z]", local.client_name)))
   vault                 = "DevOps Tech"
@@ -15,7 +14,7 @@ module "rds" {
 module "one-password-ru" {
   source = "./../../modules/one-password"
 
-  service_account_token = local.service_account_token
+  service_account_token = var.service_account_token
 
   client_name = local.client_name
   title       = "${local.client_name} - RDS | Admin (root)"
@@ -71,7 +70,7 @@ module "mysql-su" {
 module "one-password-pu" {
   source = "./../../modules/one-password"
 
-  service_account_token = local.service_account_token
+  service_account_token = var.service_account_token
 
   client_name = local.client_name
   title       = "${local.client_name} - RDS | Production"
@@ -92,7 +91,7 @@ module "one-password-pu" {
 module "one-password-au" {
   source = "./../../modules/one-password"
 
-  service_account_token = local.service_account_token
+  service_account_token = var.service_account_token
 
   client_name = local.client_name
   title       = "${local.client_name} - RDS | Acceptance"
@@ -113,7 +112,7 @@ module "one-password-au" {
 module "one-password-su" {
   source = "./../../modules/one-password"
 
-  service_account_token = local.service_account_token
+  service_account_token = var.service_account_token
 
   client_name = local.client_name
   title       = "${local.client_name} - RDS | Staging"
@@ -133,7 +132,7 @@ module "one-password-su" {
 module "one-password-rds-snapshot-user" {
   source = "./../../modules/one-password"
 
-  service_account_token = local.service_account_token
+  service_account_token = var.service_account_token
 
   client_name = local.client_name
   title       = "${local.client_name} - RDS Snapshot User"
