@@ -10,14 +10,9 @@
 - [Detecting and Managing Drift with Terraform](https://www.hashicorp.com/blog/detecting-and-managing-drift-with-terraform)
 - [Modules in Package Sub-directories](https://developer.hashicorp.com/terraform/language/modules/sources#modules-in-package-sub-directories)
 - [MySQL module](https://github.com/petoju/terraform-provider-mysql)
+- [1Password Terraform docs](https://developer.1password.com/docs/terraform/)
 
 ## TODO's
 - [ ] Add remote backend
-- [x] Add rds module
-- [x] Add mysql module
-- [x] Add 1Password module
-- [x] Add mysql example
-- [x] Add mysql example with 1password
-- [] Add rds example with mysql and 1password
 - [ ] README for modules
 - [ ] README for examples
