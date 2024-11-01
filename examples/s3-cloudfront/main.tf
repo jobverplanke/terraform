@@ -76,6 +76,16 @@ module "one-password-iam-user" {
           value = module.s3.s3_bucket_regional_domain_name
         }
       ]
+    },
+    {
+      section_label = "Cloudfront"
+      fields = [
+        {
+          label = "Domain"
+          type  = "STRING"
+          value = module.cloudfront.cf_domain_name
+        }
+      ]
     }
   ]
 }
