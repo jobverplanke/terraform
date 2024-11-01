@@ -1,27 +1,36 @@
-variable "connect_as_user" {
+variable "endpoint" {
   type        = string
-  description = "The user which performs the actions. Ensure the user has enough privileges"
+  description = "Database endpoint (host + port)"
 }
 
-variable "user" {
+variable "operating_user" {
   type        = string
-  description = "The user that will be created. (output lower cased and spaces replaces with '_')"
+  description = "The user who performs the actions"
 }
 
-variable "host" {
+variable "operating_password" {
   type        = string
-  description = "Database hostname without schema"
+  description = "Password of the user who performs the actions"
 }
 
-variable "port" {
-  type        = number
-  default     = 3306
-  description = "Database port (default 3306)"
+variable "username" {
+  type        = string
+  description = "Username of the new user"
+
+  validation {
+    condition     = length(var.username) < 32
+    error_message = "The maximum length for user is 32 characters"
+  }
 }
 
 variable "database" {
   type        = string
   description = "Database name"
+
+  validation {
+    condition     = length(var.database) < 64
+    error_message = "The maximum length for database name is 64 characters"
+  }
 }
 
 variable "default_character_set" {

@@ -1,11 +1,14 @@
 provider "mysql" {
-  endpoint = local.endpoint
-  username = var.connect_as_user
+  endpoint = var.endpoint
+  username = var.operating_user
+  password = var.operating_password
 }
 
 locals {
-  endpoint = "${var.host}:${var.port}"
-  user     = lower(replace(var.user, "/\\W/", "_"))
+  endpoint = var.endpoint
+  host     = element(split(":", var.endpoint), 0)
+  port     = element(split(":", var.endpoint), 1)
+  user     = lower(replace(var.username, "/\\W/", "_"))
   database = lower(replace(var.database, "/\\W/", "_"))
 }
 
