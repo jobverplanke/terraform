@@ -1,7 +1,6 @@
 /.idea
 /.vscode
 .DS_Store
-.env
 
 # Terraform
 /**/*.terraform/
@@ -9,5 +8,10 @@
 /**/*.tfstate*
 /**/*.tfvars
 
-/main.tf
-/outputs.tf
+# ignore any subdirectories
+**/examples/cloudfront/
+**/examples/mysql/
+**/examples/one-password/
+**/examples/rds/
+**/examples/s3/
+**/examples/s3-cloudfront/
