@@ -1,5 +1,5 @@
 locals {
-  vault                 = "DevOps Tech"
+  vault = "DevOps Tech"
 }
 
 module "mysql" {
@@ -9,8 +9,8 @@ module "mysql" {
   operating_user     = "root"
   operating_password = ""
 
-  username           = "test_user"
-  database           = "test_database"
+  username = "test_user"
+  database = "test_database"
 }
 
 module "one-password" {
@@ -23,11 +23,11 @@ module "one-password" {
   vault    = local.vault
   tags     = ["database"]
 
-  database_name = module.mysql.database
-  database_type = "mysql"
-  hostname      = module.mysql.host
-  port          = module.mysql.port
-  username      = module.mysql.user
-  password      = module.mysql.password
+  database_name            = module.mysql.database
+  database_type            = "mysql"
+  hostname                 = module.mysql.host
+  port                     = module.mysql.port
+  username                 = module.mysql.user
+  password                 = module.mysql.password
   should_generate_password = false
 }

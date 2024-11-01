@@ -1,7 +1,7 @@
 variable "service_account_token" {
   type        = string
   description = "1Password Service Account Token"
-  sensitive = true
+  sensitive   = true
 }
 
 variable "vault" {
@@ -99,7 +99,7 @@ variable "section" {
     section_label = string
     fields = list(object({
       label = string
-      type = string
+      type  = string
       value = string
     }))
   }))

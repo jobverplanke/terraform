@@ -12,7 +12,7 @@ locals {
   rds_username            = lower(replace(var.client_name, "/\\W|_|\\s/", "_"))
 
   iam_user        = "np-rds-snapshot-${local.client_name}"
-  iam_user_groups       = ["Projects"]
+  iam_user_groups = ["Projects"]
   iam_policy_name = "AWSRDSSnapshot${title(replace(var.client_name, "/\\W|_|\\s/", ""))}"
 
   db_parameter_group_name = "np-${local.client_name}-parameter-group"

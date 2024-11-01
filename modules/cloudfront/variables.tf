@@ -17,7 +17,7 @@ variable "tags" {
 
 variable "cf_cdn_domain" {
   type        = string
-  default = ""
+  default     = ""
   description = "CDN domain or sub-domain (default empty string)"
 }
 

@@ -1,7 +1,7 @@
 locals {
-  client_name           = "Test Client Name"
+  client_name       = "Test Client Name"
   client_identifier = lower(join("", regexall("[A-Z]", local.client_name)))
-  vault                 = "DevOps Tech"
+  vault             = "DevOps Tech"
 }
 
 module "rds" {
@@ -22,11 +22,11 @@ module "one-password-ru" {
   vault       = local.vault
   tags        = ["rds", "aws", "database"]
 
-  database_type = "mysql"
-  hostname      = module.rds.rds_host
-  port          = module.rds.rds_port
-  username      = module.rds.rds_root_user
-  password      = module.rds.rds_root_user_password
+  database_type            = "mysql"
+  hostname                 = module.rds.rds_host
+  port                     = module.rds.rds_port
+  username                 = module.rds.rds_root_user
+  password                 = module.rds.rds_root_user_password
   should_generate_password = false
 }
 
@@ -78,12 +78,12 @@ module "one-password-pu" {
   vault       = local.vault
   tags        = ["rds", "database"]
 
-  database_name = module.mysql-pu.database
-  database_type = "mysql"
-  hostname      = module.mysql-pu.host
-  port          = module.mysql-pu.port
-  username      = module.mysql-pu.user
-  password      = module.mysql-pu.password
+  database_name            = module.mysql-pu.database
+  database_type            = "mysql"
+  hostname                 = module.mysql-pu.host
+  port                     = module.mysql-pu.port
+  username                 = module.mysql-pu.user
+  password                 = module.mysql-pu.password
   should_generate_password = false
 }
 
@@ -99,12 +99,12 @@ module "one-password-au" {
   vault       = local.vault
   tags        = ["rds", "database"]
 
-  database_name = module.mysql-au.database
-  database_type = "mysql"
-  hostname      = module.mysql-au.host
-  port          = module.mysql-au.port
-  username      = module.mysql-au.user
-  password      = module.mysql-au.password
+  database_name            = module.mysql-au.database
+  database_type            = "mysql"
+  hostname                 = module.mysql-au.host
+  port                     = module.mysql-au.port
+  username                 = module.mysql-au.user
+  password                 = module.mysql-au.password
   should_generate_password = false
 }
 
@@ -119,12 +119,12 @@ module "one-password-su" {
   category    = "database"
   vault       = local.vault
 
-  database_name = module.mysql-su.database
-  database_type = "mysql"
-  hostname      = module.mysql-su.host
-  port          = module.mysql-su.port
-  username      = module.mysql-su.user
-  password      = module.mysql-su.password
+  database_name            = module.mysql-su.database
+  database_type            = "mysql"
+  hostname                 = module.mysql-su.host
+  port                     = module.mysql-su.port
+  username                 = module.mysql-su.user
+  password                 = module.mysql-su.password
   should_generate_password = false
 }
 
@@ -134,11 +134,11 @@ module "one-password-rds-snapshot-user" {
 
   service_account_token = var.service_account_token
 
-  client_name = local.client_name
-  title       = "${local.client_name} - RDS Snapshot User"
-  category    = "login"
-  vault       = local.vault
-  tags        = ["rds", "database"]
+  client_name              = local.client_name
+  title                    = "${local.client_name} - RDS Snapshot User"
+  category                 = "login"
+  vault                    = local.vault
+  tags                     = ["rds", "database"]
   should_generate_password = false
 
   section = [

@@ -1,7 +1,7 @@
 locals {
-  client_name           = "Test Client Name"
-  vault                 = "DevOps Tech"
-  project_type          = "web"
+  client_name  = "Test Client Name"
+  vault        = "DevOps Tech"
+  project_type = "web"
 }
 
 module "s3" {
@@ -17,11 +17,11 @@ module "one-password-iam-user" {
 
   service_account_token = var.service_account_token
 
-  client_name = local.client_name
-  title       = "${local.client_name} - S3 Bucket"
-  category    = "login"
-  vault       = local.vault
-  tags        = ["s3", "aws"]
+  client_name              = local.client_name
+  title                    = "${local.client_name} - S3 Bucket"
+  category                 = "login"
+  vault                    = local.vault
+  tags                     = ["s3", "aws"]
   should_generate_password = false
 
   # https://registry.terraform.io/providers/1Password/onepassword/latest/docs/resources/item#nested-schema-for-sectionfield
