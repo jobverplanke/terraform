@@ -1,9 +1,3 @@
-variable "client_name" {
-  type        = string
-  default     = null
-  description = "Name of the client (default null)"
-}
-
 variable "service_account_token" {
   type        = string
   description = "1Password Service Account Token"
@@ -14,14 +8,30 @@ variable "vault" {
   description = "Name of the Vault"
 }
 
+variable "client_name" {
+  type        = string
+  default     = ""
+  description = "Name of the client (default empty string)"
+}
+
 variable "title" {
   type        = string
   description = "Title of the item"
+
+  validation {
+    condition     = var.title != ""
+    error_message = "Title cannot be empty"
+  }
 }
 
 variable "category" {
   type        = string
-  description = "Category to place item in, options are login, password, or database (default password)"
+  description = "Category to place item in, options are \"login\", \"password\" or \"database\" (default password)"
+
+  validation {
+    condition     = contains(["login", "password", "database"], var.category)
+    error_message = "Allowd values for \"var.category\" are \"login\", \"password\" or \"database\""
+  }
 }
 
 variable "tags" {
@@ -32,40 +42,65 @@ variable "tags" {
 
 variable "url" {
   type        = string
-  default     = ""
+  default     = null
   description = "URL of item"
 }
 
 variable "username" {
   type        = string
-  description = "MySQL user"
+  default     = null
+  description = "Username"
 }
 
 variable "password" {
   type        = string
-  description = "MySQL user password"
+  default     = null
+  description = "Password"
   sensitive   = true
+}
+
+variable "should_generate_password" {
+  type        = bool
+  description = "Should generate password"
+
+  # validation {
+  #   condition = var.generate_password != null
+  #   error_message = "Variable \"var.generate_password\" is required"
+  # }
 }
 
 variable "database_name" {
   type        = string
-  description = "MySQL database name"
+  default     = null
+  description = "MySQL database name (default empty string)"
 }
 
 variable "database_type" {
   type        = string
-  default     = "mysql"
-  description = "MySQL database typ, could be one of 'mssql', 'mysql', 'postgresql', 'sqlite', or 'other' (default mysql)"
+  default     = "other"
+  description = "MySQL database type, could be one of \"mysql\", \"postgresql\" or \"sqlite\""
 }
 
 variable "hostname" {
   type        = string
-  default     = ""
+  default     = null
   description = "MySQL host (default empty string)"
 }
 
 variable "port" {
-  type        = number
-  default     = 3306
-  description = "MySQL port (default 3306)"
+  type        = string
+  default     = null
+  description = "MySQL port (default empty string)"
+}
+
+variable "section" {
+  type = list(object({
+    section_label = string
+    fields = list(object({
+      label = string
+      type = string
+      value = string
+    }))
+  }))
+  default = []
 }
