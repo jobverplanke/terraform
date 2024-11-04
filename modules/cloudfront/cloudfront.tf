@@ -1,5 +1,5 @@
 resource "aws_cloudfront_distribution" "default" {
-  aliases             = [local.cf_cdn_domain]
+  # aliases             = [local.cf_cdn_domain]
   enabled             = true
   is_ipv6_enabled     = true
   wait_for_deployment = true
