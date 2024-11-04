@@ -39,6 +39,7 @@ resource "aws_cloudfront_distribution" "default" {
 # Create OAC for CloudFront to send authenticated requests to S3 bucket
 resource "aws_cloudfront_origin_access_control" "default" {
   name                              = local.cf_origin_access_control
+  description                       = "Allow read-only access to a CloudFront OAC"
   origin_access_control_origin_type = "s3"
   signing_behavior                  = "always"
   signing_protocol                  = "sigv4"
