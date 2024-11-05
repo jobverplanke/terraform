@@ -1,5 +1,6 @@
 locals {
   client_name  = "Test Client Name"
+  iam_user_groups = [""]
   vault        = "DevOps Tech"
   project_type = "web"
 }
@@ -9,6 +10,7 @@ module "s3" {
 
   client_name  = local.client_name
   project_type = local.project_type
+  iam_user_groups = local.iam_user_groups
 }
 
 module "cloudfront" {
@@ -58,7 +60,7 @@ module "one-password-iam-user" {
       ]
     },
     {
-      section_label = "Bucket"
+      section_label = "S3 Bucket"
       fields = [
         {
           label = "Region"
