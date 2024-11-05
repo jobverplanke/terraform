@@ -44,3 +44,36 @@ resource "aws_cloudfront_origin_access_control" "default" {
   signing_behavior                  = "always"
   signing_protocol                  = "sigv4"
 }
+
+# Create a bucket policy to only allow traffic to S3 bucket from Cloudfront
+resource "aws_s3_bucket_policy" "default" {
+  bucket = var.s3_bucket_id
+  policy = data.aws_iam_policy_document.default.json
+}
+
+data "aws_iam_policy_document" "default" {
+  statement {
+    sid = "AllowCloudFrontServicePrincipal"
+    effect = "Allow"
+    actions = [
+      "s3:GetObject"
+    ]
+
+    resources = [
+      "${var.s3_bucket_arn}/*"
+    ]
+
+    condition {
+      test     = "StringEquals"
+      values   = [
+        aws_cloudfront_distribution.default.arn,
+      ]
+      variable = "AWS:SourceArn"
+    }
+
+    principals {
+      type        = "Service"
+      identifiers = ["cloudfront.amazonaws.com"]
+    }
+  }
+}
