@@ -9,7 +9,7 @@ locals {
 
   # https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/using-managed-cache-policies.html#managed-cache-caching-optimized
   cf_default_cache_behavior_cache_policy_id = "658327ea-f89d-4fab-a63d-7e88639e58f6"
-  cf_default_cache_behavior_allowed_methods = ["GET", "HEAD"]
+  cf_default_cache_behavior_allowed_methods = ["GET", "HEAD", "OPTIONS"]
   cf_default_cache_behavior_cached_methods  = ["GET", "HEAD"]
 
   tags = merge({
