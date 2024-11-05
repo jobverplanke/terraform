@@ -17,6 +17,7 @@ module "cloudfront" {
   client_name = local.client_name
 
   s3_bucket_id                   = module.s3.s3_bucket_id
+  s3_bucket_arn                  = module.s3.s3_bucket_arn
   s3_bucket_name                 = module.s3.s3_bucket_name
   s3_bucket_regional_domain_name = module.s3.s3_bucket_regional_domain_name
 }
@@ -79,6 +80,11 @@ module "one-password-iam-user" {
     {
       section_label = "Cloudfront"
       fields = [
+        {
+          label = "Distribution ID"
+          type  = "STRING"
+          value = module.cloudfront.cf_distribution_id
+        },
         {
           label = "Domain"
           type  = "STRING"
