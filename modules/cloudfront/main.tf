@@ -3,7 +3,7 @@ locals {
 
   aws_creator = data.aws_caller_identity.current.arn
 
-  cf_cdn_domain = coalesce(var.cf_cdn_domain, "cdn-${local.client_name}.somedomain.nl")
+  cf_cdn_domain = coalesce(var.cf_cdn_domain, "cdn-${local.client_name}.verplanke.dev")
 
   cf_origin_access_control = "np-${local.client_name}-s3-cloudfront-oac"
 
