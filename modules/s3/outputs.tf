@@ -8,6 +8,11 @@ output "s3_bucket_id" {
   description = "ID of S3 Bucket"
 }
 
+output "s3_bucket_arn" {
+  value       = aws_s3_bucket.default.arn
+  description = "S3 bucket ARN"
+}
+
 output "s3_bucket_name" {
   value       = aws_s3_bucket.default.bucket
   description = "Name of S3 Bucket"
