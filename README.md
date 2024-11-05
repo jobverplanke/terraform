@@ -16,8 +16,8 @@
 Navigate to the desired example and edit the example to your liking. The run the following commands to apply
 ```shell
 terraform init
-terraform plan -var-file="./../secrets.tfvars" (change path to correct location of `secrets.tfvars`)
-terraform apply -var-file="./../secrets.tfvars"
+terraform plan -var-file="secrets.tfvars" (change path to correct location of `secrets.tfvars`)
+terraform apply -var-file="secrets.tfvars"
 ```
 
 ## TODO's
