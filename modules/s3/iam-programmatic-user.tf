@@ -43,11 +43,15 @@ data "aws_iam_policy_document" "default" {
       "s3:PutObjectAcl",
       "s3:ReplicateObject",
       "s3:DeleteObject",
+      # "cloudfront:ListInvalidations",
+      # "cloudfront:GetInvalidation",
+      # "cloudfront:CreateInvalidation"
     ]
 
     resources = [
       aws_s3_bucket.default.arn,
       "${aws_s3_bucket.default.arn}/*"
+      # "${aws_cloudfront.default.arn}/*"
     ]
   }
 }
